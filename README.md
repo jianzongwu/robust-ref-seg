@@ -3,7 +3,7 @@
   <h1 align="center">Towards Robust Referring Image Segmentation</h1>
   <p align="center">
     <br />
-    <a href="pass"><strong>Jianzong Wu</strong></a>
+    <a href="https://jianzongwu.github.io/"><strong>Jianzong Wu</strong></a>
     ·
     <a href="https://lxtgh.github.io/"><strong>Xiangtai Li</strong></a>
     ·
