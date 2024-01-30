@@ -38,6 +38,7 @@ Referring Image Segmentation (RIS) is a fundamental vision-language task that o
 
 # 📢 Updates
 
+- [2024.1.30] The added negative sentences can be downloaded at [this link](https://drive.google.com/file/d/1oyC1SeCXGHhPvsu3mALuyffBkMFZ2tvS/view?usp=sharing) (together with original refcoco annotations).
 - [2022.9.17] The robust referring image segmentation datasets [R-RefCOCO](https://drive.google.com/file/d/19qGViJigR5AXhkZlNmu89jI4cvAJ7pnP/view?usp=sharing), [R-RefCOCO+](https://drive.google.com/file/d/19qGViJigR5AXhkZlNmu89jI4cvAJ7pnP/view?usp=sharing), and [R-RefCOCOg](https://drive.google.com/file/d/19qGViJigR5AXhkZlNmu89jI4cvAJ7pnP/view?usp=sharing) are released!
 
 # 🏆 Contributions
