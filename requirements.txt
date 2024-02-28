@@ -1,0 +1,8 @@
+matplotlib==3.6.1
+scikit-image==0.19.3
+scipy==1.9.2
+timm==0.6.11
+tokenizers==0.13.1
+tqdm==4.64.1
+transformers==4.23.1
+yacs

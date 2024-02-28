@@ -64,6 +64,78 @@ An visualization of RefSegformer. Sentences in *italic* describe non-existent ob
  <img src="./assets/demo.png" width = 1200  align=center />
 </div>
 
+---
+
+# Environment preparation
+
+Please see [install.md](docs/install.md) for the installation guidance.
+
+# Download data
+
+Our model can perform both RIS and R-RIS tasks.
+
+First, please follow the [RefCOCO repo](https://github.com/lichengunc/refer) to download RefCOCO, RefCOCO+, and RefCOCOg. The images for these datasets (and our R-RefCOCO datasets) are from [COCO](https://cocodataset.org/). Please download the train2014 set.
+
+To train and evaluate on the proposed R-RIS task, please download the R-RefCOCO, R-RefCOCO+, and R-RefCOCOg datasets from [this link](https://drive.google.com/file/d/19qGViJigR5AXhkZlNmu89jI4cvAJ7pnP/view?usp=sharing).
+
+All the datasets should be organized in the following folder format:
+
+```
+data
+  |- images
+    |- mscoco
+      |- train2014
+  |- refcoco
+  |- refcoco+
+  |- refcocog
+  |- rrefcoco
+  |- rrefcoco+
+  |- rrefcocog
+```
+
+# Download models
+
+First, download pretrained models, which are used by RefSegFormer.
+
+- [bert-base-uncased](https://huggingface.co/google-bert/bert-base-uncased)
+- [Swin-base](https://github.com/microsoft/Swin-Transformer) (We use the patch4_window12_384_22k checkpoint)
+
+Organize the pretrained models as follows:
+
+```
+checkpoints
+  |- bert-base-uncased
+    |- pytorch_model.bin
+    |- bpe_simple_vocab_16e6.txt.gz
+    |- config.json
+    |- vocab.txt
+  |- swin-base
+    |- swin_base_patch4_window12_384_22k.pth
+```
+
+Then, download our RefSegFormer checkpoint and put it to `logs/`
+
+|training data|checkpoint link|
+|-|-|
+|R-RefCOCO|link|
+
+Then put it in `logs/rrefcoco/ckpt.pth`.
+
+# Training
+
+Training and evaluation are by running `main.py`.
+
+Train on a single GPU
+```
+python main.py --exp rrefcoco --dataset rrefcoco --batch_size 6 --use_mask --use_exist --use_pixel_decoder
+```
+
+Train on multiple GPUs
+```
+python -m torch.distributed.launch --master_port 1234 --nproc_per_node 4 main.py --exp swin_base_refb_fuse12 --dataset refcocob --splitBy unc --batch_size 8 --n_fuse 2 --use_mask --use_exist --cfg_file configs/swin_base_patch4_window12_480.yaml --size 480 --epoch 50 --lr 3e-5 --num_mem 20 --num_neg_mem 10 > nohup.out 2>&1 &
+```
+
+---
 
 # 📜 Citation
 If you find our work useful in your research, please consider citing: 
