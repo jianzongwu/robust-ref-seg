@@ -25,7 +25,7 @@ from dataset.ReferDataset import ReferDataset
 from dataset.transform import get_transform
 
 
-# warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore")
 
 
 def train_one_epoch(train_loader, model, optimizer, lr_scheduler, epoch, local_rank, args):

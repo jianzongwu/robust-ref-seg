@@ -1,7 +1,7 @@
 DATA:
   IMG_SIZE: 480
 PRETRAIN:
-  PATH: checkpoint/swin_base_patch4_window12_384_22k.pth
+  PATH: checkpoints/swin-base/swin_base_patch4_window12_384_22k.pth
 MODEL:
   NAME: swin
   DROP_PATH_RATE: 0.3

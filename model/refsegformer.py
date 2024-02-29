@@ -3,7 +3,7 @@ import transformers
 import torch.nn.functional as F
 from utils.util import load_pretrained_swin
 
-from swin_transformer_encoder_fusion import SwinTransformerEncoderFusion
+from model.swin_transformer_encoder_fusion import SwinTransformerEncoderFusion
 from model.position_encoding import build_position_encoding
 from model.segmentation_decoder_fusion import SegmentationDecoderFusion
 

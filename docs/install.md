@@ -21,17 +21,11 @@ conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit
 
 ## 3. Install mmcv
 
-We recommend install mmcv locally. A local installation will have lower probabilities to trigger errors.
-Library repositories like mmcv will be stored in the `libs` folder.
-In this repo, we use mmcv-full=1.7.1 and install it locally. Other installation methods can be found in [mmcv official repo](https://github.com/open-mmlab/mmcv).
+In this repo, we use mmcv-full=1.7.1. 2.x versions are not compatible with this repo. Other installation methods can be found in [mmcv official repo](https://github.com/open-mmlab/mmcv).
 
 ``` bash
-mkdir libs
-cd libs
-git clone git@github.com:open-mmlab/mmcv.git
-cd mmcv
-pip install -r requirements/optional.txt
-pip install -e . -v
+pip install -U openmim
+mim install mmcv-full==1.7.1
 ```
 
 Then evaluate the installation.

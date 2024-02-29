@@ -8,8 +8,8 @@ import torch.nn.functional as F
 from typing import List
 import math
 
-from VLTF import ScaledDotProductAttention
-from msdeformattn_pixel_decoder import MSDeformAttnPixelDecoder
+from model.VLTF import ScaledDotProductAttention
+from model.msdeformattn_pixel_decoder import MSDeformAttnPixelDecoder
 
 class SegmentationDecoderFusion(nn.Module):
     def __init__(self, config, args, position_encoding):

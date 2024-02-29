@@ -125,18 +125,22 @@ Then put it in `logs/rrefcoco/ckpt.pth`.
 # Training
 
 Training and evaluation are by running `main.py`.
+The `--dataset` parameter can be [refcoco|refcoco+|refcocog|rrefcoco|rrefcoco+|rrefcocog].
+Adjust --nproc_per_node according to the number of GPUs used.
 
-Train on a single GPU
-```
-python main.py --exp rrefcoco --dataset rrefcoco --batch_size 6 --use_mask --use_exist --use_pixel_decoder
-```
-
-Train on multiple GPUs
-```
-python -m torch.distributed.launch --master_port 1234 --nproc_per_node 4 main.py --exp swin_base_refb_fuse12 --dataset refcocob --splitBy unc --batch_size 8 --n_fuse 2 --use_mask --use_exist --cfg_file configs/swin_base_patch4_window12_480.yaml --size 480 --epoch 50 --lr 3e-5 --num_mem 20 --num_neg_mem 10 > nohup.out 2>&1 &
+``` bash
+python -m torch.distributed.launch --master_port 1234 --nproc_per_node 8 main.py --exp rrefcoco --dataset rrefcoco --batch_size 6 --use_mask --use_exist --use_pixel_decoder
 ```
 
----
+# Evaluation
+
+Evaluation is also run by `main.py`.
+The batch size should be set to 1 when evaluation.
+
+``` bash
+python -m torch.distributed.launch --master_port 1234 --nproc_per_node 8 main.py --exp rrefcoco --dataset rrefcoco --batch_size 1 --use_mask --use_exist --use_pixel_decoder --eval
+```
+
 
 # 📜 Citation
 If you find our work useful in your research, please consider citing: 
