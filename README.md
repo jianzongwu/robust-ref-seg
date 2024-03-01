@@ -115,12 +115,11 @@ checkpoints
 ```
 
 Then, download our RefSegFormer checkpoint and put it to `logs/`
+Please rename and put the checkpoint to `logs/{exp_name_you_want}/ckpt.pth`
 
-|training data|checkpoint link|
+|training data|checkpoint link||
 |-|-|
-|R-RefCOCO|[placeholder]()|
-
-Then put it in `logs/rrefcoco/ckpt.pth`.
+|R-RefCOCO|[google cloud](https://drive.google.com/file/d/1XQBmHxci5LimvyHo6kANsllid5MsGU2A/view?usp=sharing)|
 
 # Training
 
