@@ -77,7 +77,7 @@ Our model can perform both RIS and R-RIS tasks.
 
 First, please follow the [RefCOCO repo](https://github.com/lichengunc/refer) to download RefCOCO, RefCOCO+, and RefCOCOg. The images for these datasets (and our R-RefCOCO datasets) are from [COCO](https://cocodataset.org/). Please download the train2014 set.
 
-To train and evaluate on the proposed R-RIS task, please download the R-RefCOCO, R-RefCOCO+, and R-RefCOCOg datasets from [this link](https://drive.google.com/file/d/19qGViJigR5AXhkZlNmu89jI4cvAJ7pnP/view?usp=sharing).
+To train and evaluate on the proposed R-RIS task, please download the R-RefCOCO, R-RefCOCO+, and R-RefCOCOg datasets from [this link](https://drive.google.com/file/d/1wiKhMHgfcNHNpo07lhYOp-obXsfVcGxI/view?usp=sharing).
 
 All the datasets should be organized in the following folder format:
 
@@ -118,7 +118,7 @@ Then, download our RefSegFormer checkpoint and put it to `logs/`
 
 |training data|checkpoint link|
 |-|-|
-|R-RefCOCO|link|
+|R-RefCOCO|[placeholder]()|
 
 Then put it in `logs/rrefcoco/ckpt.pth`.
 
@@ -131,6 +131,8 @@ Adjust --nproc_per_node according to the number of GPUs used.
 ``` bash
 python -m torch.distributed.launch --master_port 1234 --nproc_per_node 8 main.py --exp rrefcoco --dataset rrefcoco --batch_size 6 --use_mask --use_exist --use_pixel_decoder
 ```
+
+The trained model and the training log are in `/logs`.
 
 # Evaluation
 
