@@ -149,8 +149,8 @@ If you find our work useful in your research, please consider citing:
 @article{wu2022towards,
   title={Towards robust referring image segmentation},
   author={Wu, Jianzong and Li, Xiangtai and Li, Xia and Ding, Henghui and Tong, Yunhai and Tao, Dacheng},
-  journal={arXiv preprint arXiv:2209.09554},
-  year={2022}
+  journal={IEEE-TIP},
+  year={2024}
 }
 ```
 
